@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamusi | Digital Swahili Dictionary</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Kamusi<span class="dot">.</span></div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Bridging Languages.</h1>
+            <p>The definitive modern English-Swahili reference.</p>
+
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" placeholder="Search 'Upendo' or 'Love'..." autocomplete="off">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="results-header">
+            <span id="resultCount">Explore the collection</span>
+        </div>
+
+        <div id="results" class="results-grid"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Kamusi Project. Built to digitize Kiswahili.</p>
+    </footer>
+
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>🚩 Report an Issue</h2>
+
+            <form action="https://formspree.io/f/xkoggzad" method="POST">
+                <input type="hidden" id="reportWord" name="word_reported">
+
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">
+                    Reporting word: <b id="displayWord" style="color: #EA580C;">...</b>
+                </p>
+
+                <label for="issue">What is the issue?</label>
+                <select name="issue" id="issue" required>
+                    <option value="translation">Wrong Translation</option>
+                    <option value="spelling">Spelling / Typos</option>
+                    <option value="missing">Missing Definition</option>
+                    <option value="offensive">Inappropriate Content</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="details">Suggested Correction</label>
+                <textarea name="details" id="details" placeholder="e.g. It should mean 'Peace', not 'Love'..." required></textarea>
+
+                <button type="submit" class="btn-submit">Send Report</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
